@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-<link href="{% static 'order_page.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'order_page1.css' %}" rel="stylesheet" type="text/css">
 <html lang="en">
 
 <head>
@@ -14,5 +14,60 @@
     </header>
 
 </div>
+<div>
+    you can order only in multiples of 100
+</div>
+<div class="item_list">
+    <div id="inkPen"> INK PEN </div>
+    <div id="ballPointPens"> BALL POINT PEN </div>
+    <div id="pilotPens">  PILOT PENS  </div>
+    <div id="normalPens"> NORMAL PENS  </div>
+
+</div>
+
+<form action="order_page" method="post">
+<div class="order_placement_section">
+
+    <div class="dropdowns">
+        <div id="types_of_ink_pen">
+            <label for="inkPens">Select Ink pen types :</label>
+            <select name="inkPens">
+                <option value="">NONE</option>
+                <option value=" steel-plated">  steel-plated </option>
+                <option value="Aluminim-plates"> Aluminim-plates</option>
+                <option value="stainless-steel plates"> stainless-steel plates </option>
+            </select>
+        </div>
+        <div id="ballpen">
+            <label for="ballpoint-pen">select ball type pen : </label>
+            <select name="ballpoint-pen">
+                <option value="">NONE</option>
+                <option value="blue"> blue </option>
+                <option value="black"> black</option>
+                <option value="red"> red </option>
+                <option value="green"> green</option>
+                <option value="multicolor"> multicolor</option>
+            </select>
+        </div>
+        <div id="pilotPen">
+            </select>
+            <label for="pilot-pen">select pilot-pen type : </label>
+            <select name="pilot-pen">
+                <option value="">NONE</option>
+                <option value=" spong-refiel"> spong-refiel </option>
+                <option value="ink-refiel"> ink-refiel</option>
+                
+
+            </select>
+        </div>
+    </div>
+
+    </div>
+    <div class="quantity">
+
+    </div>
+
+</div>
+</form>
 </body>
 </html>
