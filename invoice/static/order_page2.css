@@ -1,19 +1,19 @@
-/* #header{
+ #header{
     font-size: 35px;
     background: linear-gradient(60deg,yellow,orange);
     text-align: center ;
     height: 60px;
-} */
+}
 
 .item_list{
     display: flex;
     flex-wrap: wrap;
-    
+
     margin-top: 100px;
     /* align-items: center; */
     justify-content: center;
-    
-    
+
+
 }
 
 #inkPen,#ballPointPens,#pilotPens,#normalPens{

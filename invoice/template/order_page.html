@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
-<link href="{% static 'order_page1.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'order_page2.css' %}" rel="stylesheet" type="text/css">
+<!-- <link rel="stylesheet" href="{% static 'javascripts/test.js' %}" type="text/javascript"> -->
 <html lang="en">
 
 <head>
@@ -26,6 +27,7 @@
 </div>
 
 <form action="order_page" method="post">
+    {% csrf_token %}
 <div class="order_placement_section">
 
     <div class="dropdowns">
@@ -33,20 +35,20 @@
             <label for="inkPens">Select Ink pen types :</label>
             <select name="inkPens">
                 <option value="">NONE</option>
-                <option value=" steel-plated">  steel-plated </option>
-                <option value="Aluminim-plates"> Aluminim-plates</option>
-                <option value="stainless-steel plates"> stainless-steel plates </option>
+                <option value=" 30">  steel-plated: ₹30</option>
+                <option value="40"> Aluminim-plates: ₹40</option>
+                <option value="60"> stainless-steel plates: ₹60 </option>
             </select>
         </div>
         <div id="ballpen">
             <label for="ballpoint-pen">select ball type pen : </label>
             <select name="ballpoint-pen">
                 <option value="">NONE</option>
-                <option value="blue"> blue </option>
-                <option value="black"> black</option>
-                <option value="red"> red </option>
-                <option value="green"> green</option>
-                <option value="multicolor"> multicolor</option>
+                <option value="100"> blue: ₹100 </option>
+                <option value="200"> black: ₹200</option>
+                <option value="300"> red: ₹300 </option>
+                <option value="400"> green: ₹400</option>
+                <option value="500"> multicolor: ₹500</option>
             </select>
         </div>
         <div id="pilotPen">
@@ -54,8 +56,8 @@
             <label for="pilot-pen">select pilot-pen type : </label>
             <select name="pilot-pen">
                 <option value="">NONE</option>
-                <option value=" spong-refiel"> spong-refiel </option>
-                <option value="ink-refiel"> ink-refiel</option>
+                <option value="120"> spong-refiel: ₹120 </option>
+                <option value="125"> ink-refiel: ₹125</option>
                 
 
             </select>
@@ -68,6 +70,20 @@
     </div>
 
 </div>
+    <input type="submit" placeholder="submit">
 </form>
+
+<div id="test_js" >
+
+    hello
+
+</div>
+
+<button onclick="change()" >  click to change </button>
+
+<script src="{% static '/javascripts/test.js'%}" type="text/javascript"></script>
+    
+    
+
 </body>
 </html>
