@@ -1,0 +1,67 @@
+ #header{
+    font-size: 35px;
+    background: linear-gradient(60deg,yellow,orange);
+    text-align: center ;
+    height: 60px;
+}
+
+.item_list{
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: 100px;
+    /* align-items: center; */
+    justify-content: center;
+
+
+}
+
+#inkPen,#ballPointPens,#pilotPens,#normalPens{
+
+    display: block;
+    width: 400px;
+    height: 400px;
+    padding: 30px;
+    text-align: center;
+    border: 0.5px solid black;
+    margin: 10px 10px 10px 10px;
+    color: white;
+
+
+}
+
+
+
+/*-------------- order selection area ----------------*/
+
+.order_placement_section{
+    display: flex;
+    height: 600px;
+}
+
+
+.dropdowns{
+    display: flex;
+    flex-direction: row;
+    /* margin: 20px 20px 20px 20px; */
+    justify-content: center;
+    text-align: center;
+}
+
+#types_of_ink_pen,#ballpen,#pilotPen{
+    margin: 20px 20px 20px 20px;
+}
+
+option{
+    text-align: center;
+}
+
+select{
+    width: 200px;
+    height: 30px;
+}
+
+label{
+    font-size: 25px;
+}
+

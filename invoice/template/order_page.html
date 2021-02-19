@@ -61,6 +61,15 @@
                 <option value="40"> Aluminim-plates: ₹40</option>
                 <option value="60"> stainless-steel plates: ₹60 </option>
             </select>
+            <div id="quantity_ink_pens">
+
+                <div id="value_increment">
+                    <!-- <p id ="value">100</p>
+                    <button id="increment" onclick="increase_quantity()">+</button>
+                    <button id="decrement" onclick="decrease_quantity()" >-</button> -->
+                </div>
+
+            </div>
         </div>
         <div id="ballpen">
             <label for="ballpoint-pen">select ball type pen : </label>
@@ -92,7 +101,7 @@
     </div>
 
 </div>
-    <input type="submit" placeholder="submit">
+    <input type="submit" placeholder="submit" name="submission" value="only_submit">
 </form>
 
 <div id="test_js" >
@@ -100,10 +109,13 @@
     hello
 
 </div>
+<p id ="value_selection">100</p>
+                    <button id="increment" onclick="increase_quantity()">+</button>
+                    <button id="decrement" onclick="decrease_quantity()" >-</button>
 
 <button onclick="change()" >  click to change </button>
 
-<script src="{% static '/javascripts/test.js'%}" type="text/javascript"></script>
+<script src="{% static '/javascripts/test2.js'%}" type="text/javascript"></script>
     
     
 
