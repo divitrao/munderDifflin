@@ -39,5 +39,9 @@ def payments(request):
 
         return render(request,'home.html')
     else:
+        context = {}
+        system = request.POST.get.value('inkPens',None)
+        context['system'] = system
+        print(context)
         return render(request,'payments.html')
 
