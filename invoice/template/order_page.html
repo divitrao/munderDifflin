@@ -48,7 +48,7 @@
 
 </div>
 
-<form action="order_page" method="post">
+<form action="order_page" method="post" id="systemform">
     {% csrf_token %}
 <div class="order_placement_section">
 
@@ -66,13 +66,13 @@
 
                 <div id="value_buttons">
                     <!-- <input name="selele" hidden > -->
-                    <input value="100" disabled type="number"  id ="value_selection_ink_pen">
+                    <input value="100" readonly="readonly" type="number" name="quatity_ink" id ="value_selection_ink_pen" form="systemform">
                     <button  id="increment_ink_pen" onclick="increase_quantity_ink_pen()" type="button"><strong>+</strong></button>
                     <button id="decrement_ink_pen" onclick="decrease_quantity_ink_pen()" type="button" ><strong>-</strong></button>
                 </div>
                 <div id="ink_pen_cost">
                     <p> total cost of ink pens: </p>
-                    <p>Rs</p><p id="cost_ink">0</p>
+                    <p>Rs</p><input value="0" readonly="readonly" type="number" name="costing_ink"  form="systemform"id="cost_ink">
 
                 </div>
 
@@ -135,8 +135,8 @@
 
 </div> -->
 
-<input  name="selections"  id="test_test" value="100" type="number" disabled>
-<button type="button" onclick="test_func()">press</button>
+<!-- <input  name="selections"  id="test_test" value="100" type="number" disabled>
+<button type="button" onclick="test_func()">press</button> -->
 <!-- <button onclick="change()" >  click to change </button> -->
 
 <script src="{% static '/javascripts/test3.js'%}" type="text/javascript"></script>

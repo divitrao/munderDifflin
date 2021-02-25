@@ -21,15 +21,15 @@ function increase_quantity_ink_pen(){
                 document.getElementById("decrement_ink_pen").style.border = "none"
         }
         document.getElementById("value_selection_ink_pen").value=  number
-        document.getElementById("cost_ink").innerHTML = ink_pen_values.toString()
-        console.log(ink_pen_values)
+        document.getElementById("cost_ink").value = ink_pen_values.toString()
+        // console.log(ink_pen_values)
 
 
 }
 
 function decrease_quantity_ink_pen(){
 
-        let number = parseInt(document.getElementById("value_selection_ink_pen").innerHTML)-100;
+        let number = parseInt(document.getElementById("value_selection_ink_pen").value)-100;
         let ink_pen_values =  parseInt(document.getElementById("ink_pens_value").value)*number
         if (number <1100){
                 document.getElementById("increment_ink_pen").disabled = false;
@@ -42,13 +42,13 @@ function decrease_quantity_ink_pen(){
                 document.getElementById("decrement_ink_pen").style.backgroundColor = "white";
                 document.getElementById("decrement_ink_pen").style.color = "black";
                 document.getElementById("decrement_ink_pen").style.border = "2px solid rgb(255, 104, 59)";
-                document.getElementById("value_selection_ink_pen").innerHTML=100;
+                document.getElementById("value_selection_ink_pen").value=100;
         }
          
         
         else{
-                document.getElementById("value_selection_ink_pen").innerHTML=number.toString()
-                document.getElementById("cost_ink").innerHTML = (ink_pen_values).toString()
+                document.getElementById("value_selection_ink_pen").value=number.toString()
+                document.getElementById("cost_ink").value = (ink_pen_values).toString()
         }
         
 }
@@ -162,9 +162,9 @@ function decrease_quantity_pilot_pens(){
 
 function  update_numbers(){
 
-        document.getElementById("value_selection_ink_pen").innerHTML = '100'
+        document.getElementById("value_selection_ink_pen").value = '100'
         let value_of_selected_product=parseInt(document.getElementById("ink_pens_value").value)*100
-        document.getElementById("cost_ink").innerHTML = value_of_selected_product.toString()
+        document.getElementById("cost_ink").value = value_of_selected_product.toString()
         if (document.getElementById("increment_ink_pen").disabled==true){
 
                 document.getElementById("increment_ink_pen").disabled=false;
@@ -181,8 +181,9 @@ function  update_numbers(){
         }
 }
 
-function test_func(){
-        c = parseInt(document.getElementById("test_test").value)+100
-        document.getElementById("test_test").value=c.toString()
+// function test_func(){
+//         c = parseInt(document.getElementById("test_test").value)+100
+//         document.getElementById("test_test").value=c.toString()
+//         console.log(document.getElementById("test_test").value)
 
-}
+// }

@@ -87,8 +87,17 @@ label{
 }
 
 
+/*********************************  CSS for input section ink pens ****************/
 
+#value_selection_ink_pen{
+    width: 82px;
+    border: none;
+    font-size: 30px;
+    margin-top: 2px;
+}
+
+/* 
 #test_test{
     border: none;
     width: 200px;
-}
+} */

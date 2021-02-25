@@ -123,8 +123,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [r'C:\Users\divit\PycharmProjects\munder_difflin\invoice\static']
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST_USER = '**************'
+EMAIL_HOST_USER = 'divitrao97d@gmail.com'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_PASSWORD = '*********'
+EMAIL_HOST_PASSWORD = '11061997@pP'

@@ -2,22 +2,48 @@ from django.shortcuts import render
 from django.core.mail import  send_mail
 
 def home(request):
+    # if request.method == 'POST':
+    #     to_email = request.POST.get('to_email')
+    #     messages = request.POST.get('text_boxes')
+    #     send_mail(
+    #         'TEST SUBJECT 001',  # subject
+    #         messages,
+    #         'divitrao97d@gmail.com',  # from_email
+    #         [to_email]  # to email
+    #
+    #     )
+    #
+    #     return render(request, 'home.html')
+
     return  render(request,'home.html')
 # def orderPage(request):
 #     return render(request,'order_page.html')
 
 def orderPage(request):
     if request.method == 'POST':
-        action = request.POST.get('submission')
-        if action == 'only_submit':
-            global form1, form2, form3
-            form1 = request.POST['inkPens']
-            form2 = request.POST['ballpoint-pen']
-            form3 = request.POST['pilot-pen']
-            # print(form1)
-            # print(form2)
-            # print(form3)
-            return render(request, 'payments.html')
+        # action = request.POST.get('submission')
+        # if action == 'only_submit':
+        #     global form1, form2, form3
+        #     form1 = request.POST['inkPens']
+        #     form2 = request.POST['ballpoint-pen']
+        #     form3 = request.POST['pilot-pen']
+        #     # print(form1)
+        #     # print(form2)
+        #     # print(form3)
+        # if request.method=='POST':
+            context = {}
+            system = request.POST.get('quatity_ink', None)
+            system1 = request.POST.get('costing_ink', None)
+            context['system'] = system
+            context['system1'] = system1
+            # print(context[0])
+            # print(type(context))
+            # print(context.keys())
+            # print(context.values())
+            # print( context.get('system'))
+            # print(len(context))
+            return render(request, 'payments.html', context)
+            # return render(request, 'payments.html')
 
 
 
@@ -26,8 +52,8 @@ def orderPage(request):
         return render(request,'order_page.html')
 def payments(request):
     if request.method == 'POST':
-        to_email = request.POST['to_email']
-        messages = request.POST['text_boxes']
+        to_email = request.POST.get('to_email')
+        messages = request.POST.get('text_boxes')
         send_mail(
             'TEST SUBJECT 001',# subject
             messages,
@@ -35,13 +61,22 @@ def payments(request):
             [to_email] #to email
 
         )
+    # if request.method=='POST':
+    #     context = {}
+    #     system = request.POST.get('selele', None)
+    #     context['system'] = system
+    #     print(context)
+        return render(request, 'home.html')
 
 
-        return render(request,'home.html')
+
     else:
-        context = {}
-        system = request.POST.get.value('inkPens',None)
-        context['system'] = system
-        print(context)
+        # if request.method=='POST':
+        #     context = {}
+        #     system = request.POST.get('selele', None)
+        #     context['system'] = system
+        #     print(context)
+        #     return render(request, 'payments.html', context)
+
         return render(request,'payments.html')
 
