@@ -9,26 +9,26 @@
     <title>oeder_page</title>
 </head>
 <style>
-    #inkPen{
+    #inkPen_img{
         background-image: url('{% static "image\pen2.jpg" %}');
         background-size: cover;
     }
 
-     #ballPointPens{
+     #ballPointPens_img{
         background-image: url('{% static "image\pen4.jpg" %}');
         background-size: cover;
     }
 
-    #pilotPens{
-        background-image: url('{% static "image\pen5.jpg" %}');
+    #pilotPens_img{
+        background-image: url('{% static "image\pen7.pg" %}');
         background-size: cover;
         /* background-color: black; */
     }
 
-    #normalPens{
+    /* #normalPens{
         background-image: url('{% static "image\pen6.jpg" %}');
         background-size: cover;
-    }
+    } */
 </style>
 <body>
 <div id="header">
@@ -41,10 +41,10 @@
     you can order only in multiples of 100
 </div>
 <div class="item_list">
-    <div id="inkPen"> INK PEN </div>
-    <div id="ballPointPens"> BALL POINT PEN </div>
-    <div id="pilotPens">  PILOT PENS  </div>
-    <div id="normalPens"> NORMAL PENS  </div>
+    <div id="inkPen"> INK PEN <img id="inkPen_img"/></div>
+    <div id="ballPointPens"> BALL POINT PEN <img id="ballPointPens_img"/></div>
+    <div id="pilotPens">  PILOT PENS <img id="pilotPens_img"/>  </div>
+    <!-- <div id="normalPens"> NORMAL PENS  </div> -->
 
 </div>
 
@@ -55,8 +55,8 @@
     <div class="dropdowns">
         <div id="types_of_ink_pen">
             <label for="inkPens">Select Ink pen types :</label>
-            <select  id="ink_pens_value" name="inkPens" onchange="update_numbers()">
-                <option  value="0">NONE</option>
+            <select  id="ink_pens_value" name="inkPens" onchange="update_numbers('value_selection_ink_pen','ink_pens_value','cost_ink','increment_ink_pen','decrement_ink_pen')">
+                <!-- <option  value="" hidden>select ink pens</option> -->
                 <option  value="30">  steel-plated: ₹30</option>
                 <option  value="40"> Aluminim-plates: ₹40</option>
                 <option  value="60"> stainless-steel plates: ₹60 </option>
@@ -72,7 +72,7 @@
                 </div>
                 <div id="ink_pen_cost">
                     <p> total cost of ink pens: </p>
-                    <p>Rs</p><input value="0" readonly="readonly" type="number" name="costing_ink"  form="systemform"id="cost_ink">
+                    <p>₹</p><input value="3000" readonly="readonly" type="number" name="costing_ink"  form="systemform"id="cost_ink">
 
                 </div>
 
@@ -80,8 +80,8 @@
         </div>
         <div id="ballpen">
             <label for="ballpoint-pen">select ball type pen : </label>
-            <select name="ballpoint-pen">
-                <option value="">NONE</option>
+            <select name="ballpoint-pen"  id="ball_pens_value" onchange="update_numbers('value_selection_ball_pen','ball_pens_value','cost_ball','increment_ball_pen','decrement_ball_pen')">
+                <!-- <option value="" hidden>Select ball pen</option> -->
                 <option value="100"> blue: ₹100 </option>
                 <option value="200"> black: ₹200</option>
                 <option value="300"> red: ₹300 </option>
@@ -91,9 +91,14 @@
             <div id="quantity_ball_pen">
 
                 <div id="value_buttons_ball_pen">
-                    <p id ="value_selection_ball_pen">100</p>
+                     <input value="100" readonly="readonly" type="number" name="quatity_ball"  form="systemform" id ="value_selection_ball_pen">
                     <button id="increment_ball_pen" onclick="increase_quantity_ball_pen()" type="button"><strong>+</strong></button>
                     <button id="decrement_ball_pen" onclick="decrease_quantity_ball_pen()" type="button" ><strong>-</strong></button>
+                </div>
+                <div id="ball_pen_cost">
+                    <p> total cost of ball  pens: </p>
+                    <p>₹</p><input value="10000" readonly="readonly" type="number" name="costing_ball"  form="systemform"id="cost_ball">
+
                 </div>
 
             </div>
@@ -101,8 +106,8 @@
         <div id="pilotPen">
             </select>
             <label for="pilot-pen">select pilot-pen type : </label>
-            <select name="pilot-pen">
-                <option value="">NONE</option>
+            <select name="pilot-pen" id="pilot_pens_value" onchange="update_numbers('value_selection_pilot_pens','pilot_pens_value','cost_pilot','increment_pilot_pens','decrement_pilot_pens')" >
+                <!-- <option value="" hidden>Select pilot pen</option> -->
                 <option value="120"> spong-refiel: ₹120 </option>
                 <option value="125"> ink-refiel: ₹125</option>
                 
@@ -111,9 +116,14 @@
             <div id="quantity_pilot_pens">
 
                 <div id="value_buttons_pilot_pens">
-                    <p id ="value_selection_pilot_pens">100</p>
+                     <input value="100" readonly="readonly" type="number" name="quatity_pilot"  form="systemform"  id ="value_selection_pilot_pens">
                     <button id="increment_pilot_pens" onclick="increase_quantity_pilot_pens()" type="button"><strong>+</strong></button>
                     <button id="decrement_pilot_pens" onclick="decrease_quantity_pilot_pens()" type="button" ><strong>-</strong></button>
+                </div>
+                <div id="pilot_pen_cost">
+                    <p> total cost of pilot  pens: </p>
+                    <p>₹</p><input value="12000" readonly="readonly" type="number" name="costing_pilot"  form="systemform"id="cost_pilot">
+
                 </div>
 
             </div>
@@ -126,7 +136,7 @@
     </div>
 
 </div>
-    <input type="submit" placeholder="submit" name="submission" value="only_submit">
+    <input id="sumbit_order_page" type="submit" placeholder="submit" name="submission" value="click here to check order preview & payments">
 </form>
 
 <!-- <div id="test_js" >

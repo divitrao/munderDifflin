@@ -59,7 +59,8 @@ function decrease_quantity_ink_pen(){
 /**********            section for increment and decrement of ball pen  quantiy           **********/
 
 function increase_quantity_ball_pen(){
-        let number = parseInt(document.getElementById("value_selection_ball_pen").innerHTML)+100;
+        let number = parseInt(document.getElementById("value_selection_ball_pen").value)+100;
+        let ink_pen_values = parseInt(document.getElementById("ball_pens_value").value)*number
         if (number >900){
                document.getElementById("increment_ball_pen").disabled = true;
                document.getElementById("increment_ball_pen").style.backgroundColor = "white";
@@ -73,14 +74,16 @@ function increase_quantity_ball_pen(){
                 document.getElementById("decrement_ball_pen").style.color = "white";
                 document.getElementById("decrement_ball_pen").style.border = "none"
         }
-        document.getElementById("value_selection_ball_pen").innerHTML=number.toString()
+        document.getElementById("value_selection_ball_pen").value=number.toString()
+        document.getElementById("cost_ball").value = ink_pen_values.toString()
 
 
 }
 
 function decrease_quantity_ball_pen(){
 
-        let number = parseInt(document.getElementById("value_selection_ball_pen").innerHTML)-100;
+        let number = parseInt(document.getElementById("value_selection_ball_pen").value)-100;
+        let ink_pen_values = parseInt(document.getElementById("ball_pens_value").value)*number
         if (number <1100){
                 document.getElementById("increment_ball_pen").disabled = false;
                 document.getElementById("increment_ball_pen").style.backgroundColor = "black";
@@ -92,12 +95,13 @@ function decrease_quantity_ball_pen(){
                 document.getElementById("decrement_ball_pen").style.backgroundColor = "white";
                 document.getElementById("decrement_ball_pen").style.color = "black";
                 document.getElementById("decrement_ball_pen").style.border = "2px solid rgb(255, 104, 59)";
-                document.getElementById("value_selection_ball_pen").innerHTML=100;
+                document.getElementById("value_selection_ball_pen").value=100;
         }
          
         
         else{
-                document.getElementById("value_selection_ball_pen").innerHTML=number.toString()
+                document.getElementById("value_selection_ball_pen").value=number.toString()
+                document.getElementById("cost_ball").value = ink_pen_values.toString()
         }
         
 }
@@ -117,7 +121,8 @@ function decrease_quantity_ball_pen(){
 
 
 function increase_quantity_pilot_pens(){
-        let number = parseInt(document.getElementById("value_selection_pilot_pens").innerHTML)+100;
+        let number = parseInt(document.getElementById("value_selection_pilot_pens").value)+100;
+        let ink_pen_values = parseInt(document.getElementById("pilot_pens_value").value)*number
         if (number >900){
                document.getElementById("increment_pilot_pens").disabled = true;
                document.getElementById("increment_pilot_pens").style.backgroundColor = "white";
@@ -131,14 +136,16 @@ function increase_quantity_pilot_pens(){
                 document.getElementById("decrement_pilot_pens").style.color = "white";
                 document.getElementById("decrement_pilot_pens").style.border = "none"
         }
-        document.getElementById("value_selection_pilot_pens").innerHTML=number.toString()
+        document.getElementById("value_selection_pilot_pens").value=number.toString()
+        document.getElementById("cost_pilot").value = ink_pen_values.toString()
 
 
 }
 
 function decrease_quantity_pilot_pens(){
 
-        let number = parseInt(document.getElementById("value_selection_pilot_pens").innerHTML)-100;
+        let number = parseInt(document.getElementById("value_selection_pilot_pens").value)-100;
+        let ink_pen_values = parseInt(document.getElementById("pilot_pens_value").value)*number
         if (number <1100){
                 document.getElementById("increment_pilot_pens").disabled = false;
                 document.getElementById("increment_pilot_pens").style.backgroundColor = "black";
@@ -150,34 +157,35 @@ function decrease_quantity_pilot_pens(){
                 document.getElementById("decrement_pilot_pens").style.backgroundColor = "white";
                 document.getElementById("decrement_pilot_pens").style.color = "black";
                 document.getElementById("decrement_pilot_pens").style.border = "2px solid rgb(255, 104, 59)";
-                document.getElementById("value_selection_pilot_pens").innerHTML=100;
+                document.getElementById("value_selection_pilot_pens").value=100;
         }
          
         
         else{
-                document.getElementById("value_selection_pilot_pens").innerHTML=number.toString()
+                document.getElementById("value_selection_pilot_pens").value=number.toString()
+                document.getElementById("cost_pilot").value = ink_pen_values.toString()
         }
         
 }
 
-function  update_numbers(){
+function  update_numbers(id1,id2,id3,id4,id5){
 
-        document.getElementById("value_selection_ink_pen").value = '100'
-        let value_of_selected_product=parseInt(document.getElementById("ink_pens_value").value)*100
-        document.getElementById("cost_ink").value = value_of_selected_product.toString()
-        if (document.getElementById("increment_ink_pen").disabled==true){
+        document.getElementById(id1).value = '100'
+        let value_of_selected_product=parseInt(document.getElementById(id2).value)*100
+        document.getElementById(id3).value = value_of_selected_product.toString()
+        if (document.getElementById(id4).disabled==true){
 
-                document.getElementById("increment_ink_pen").disabled=false;
-                document.getElementById("increment_ink_pen").style.backgroundColor = "black";
-                document.getElementById("increment_ink_pen").style.color = "white";
-                document.getElementById("increment_ink_pen").style.border = "none"
+                document.getElementById(id4).disabled=false;
+                document.getElementById(id4).style.backgroundColor = "black";
+                document.getElementById(id4).style.color = "white";
+                document.getElementById(id4).style.border = "none"
         }
         else{
 
-                document.getElementById("decrement_ink_pen").disabled=false;
-                document.getElementById("decrement_ink_pen").style.backgroundColor = "black";
-                document.getElementById("decrement_ink_pen").style.color = "white";
-                document.getElementById("decrement_ink_pen").style.border = "none"
+                document.getElementById(id5).disabled=false;
+                document.getElementById(id5).style.backgroundColor = "black";
+                document.getElementById(id5).style.color = "white";
+                document.getElementById(id5).style.border = "none"
         }
 }
 
