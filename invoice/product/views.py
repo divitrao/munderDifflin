@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.core.mail import  send_mail
+from django.core.mail import  send_mail,EmailMessage
 
 def home(request):
     # if request.method == 'POST':
@@ -54,13 +54,26 @@ def payments(request):
     if request.method == 'POST':
         to_email = request.POST.get('to_email')
         messages = request.POST.get('text_boxes')
-        send_mail(
-            'TEST SUBJECT 001',# subject
-            messages,
-            'divitrao97d@gmail.com', #from_email
-            [to_email] #to email
+        # file_path = r"C:\Users\divit\PycharmProjects\munder_difflin\invoice\product\hello.pdf"
+        # file = open(file_path,"r")
+        file2 = open('hello.pdf',"r")
 
-        )
+
+        # send_mail(
+        #     'TEST SUBJECT 001',# subject
+        #     messages,
+        #     'divitrao97d@gmail.com', #from_email
+        #     [to_email] #to email
+        #
+        # )
+
+        emails = EmailMessage('Test attchments 001',
+                              messages,
+                              'divitrao97d@gmail.com',
+                              [to_email])
+        # emails.attach(file_path,file.read(),'application/pdf')
+        emails.attach('hello.pdf',file2.read(),'application/pdf')
+        emails.send()
     # if request.method=='POST':
     #     context = {}
     #     system = request.POST.get('selele', None)
